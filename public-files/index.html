@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <title> Marqet WiFi | Login </title>
+    
+    <link type="text/css" rel="stylesheet"   href="css/golden-forms.css"/>
+    <link type="text/css" rel="stylesheet"   href="css/font-awesome.min.css"/>
+        
+</head>
+
+<body class="bg-linen">
+
+    <div class="gforms">
+    
+        <div class="golden-forms wrapper mini">
+            <form>
+                <div class="form-title">
+                    <h2 id="change">Login</h2>
+                </div>
+                <div class="form-enclose">
+                    <div class="form-section">
+                    
+                       <section>
+                            <div class="social-btns full">
+                                <a href="#" class="fbs" onClick="loginWithFacebook()"><i class="icon-facebook"></i><span style="padding-left:33%"class="text_on_social_buttons">With Facebook</span></a>                            
+                            </div><!-- social buttons -->                       
+                       </section>
+                       <section>
+                            <div class="social-btns full" onClick="loginWithGoogle()">
+                                <a href="#" style="background:#dd4b55;" class="fbs"><i style="background:#d25241;"class="icon-google-plus"></i><span style="padding-left:33%" class="text_on_social_buttons">With Google</span></a>                            
+                            </div><!-- social buttons -->                       
+                       </section>
+                       <section>
+                       		 <!-- <label class="cxb">Not  member yet? <strong><a href="#" class="glink ext">Register Now</a></strong> - It's  Free</label> -->
+                             <div class="tagline"><span>OR</span></div><!-- .tagline -->
+                       </section>
+                      					   
+					   <section>
+                            <div id="once" class="social-btns full" style="padding-top: 10px;" onClick="moveToSurvey()">
+                                <a href="#" style="background:#3b637b">
+									<i style="background-color:transparent;border-color:transparent;/* padding-top: 0.5%; */left: -3.5%;/* margin-bottom:45px; */top: -19.5%;"> 
+										<img src="./images/online-surveys.png" height="76">
+									</i>
+									<span style="padding-left:33%">Fill the Survey</span></a>                            
+                            </div><!-- social buttons -->                       
+                       </section>
+					   
+					   <section><div class="tagline" style="padding-top:4.5%"></div><!-- .tagline --></section>            
+                      
+                       <section>
+								<span class="gtoggle">
+									<label class="toggle-switch blue" style="float:right">
+									  <input type="checkbox" name="rem" id="toggle1" />
+									  <label for="toggle1" data-on="YES" data-off="NO"></label>
+									</label>                                
+									<label class="nice">Remember me <strong></label>
+							   </span><!-- end .gtoggle section -->
+                       </section> 
+                       
+                   </div><!-- end .form-section section -->
+                </div><!-- end .form-enclose section -->
+                
+                <div class="form-buttons">
+                    <section>
+                        <button class="button">No, thanks</button>
+                    </section>                
+                </div><!-- end .form-buttons section -->
+
+            </form>
+        </div><!-- end .golden-forms section --> 
+    </div><!-- end .gforms section -->
+    
+    <div></div>
+    <div></div>
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script src="./js/login.js"></script>
+
+<script>
+function moveToSurvey() {
+    window.location = "/survey";
+}
+</script>
+
+
+</html>
+

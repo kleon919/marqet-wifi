@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <title> Marqet WiFi | Survey </title>
+    
+    <link type="text/css" rel="stylesheet"   href="css/golden-forms.css"/>
+    <link type="text/css" rel="stylesheet"   href="css/font-awesome.min.css"/>
+    
+</head>
+
+<body class="bg-linen">
+
+    <div class="gforms">
+    
+        <div class="golden-forms wrapper">
+            <form id="wholeForm" method="post" action="">
+
+                <div class="form-title">
+                    <h2>Βοηθήστε μας να γίνουμε καλύτεροι... </h2>
+                </div>
+
+                <div class="form-enclose">
+                    <div class="form-section">
+                       
+                       <fieldset>
+                       	   <legend>Επιλέξτε την ηλικιακή σας ομάδα </legend>
+                           <section>
+                       		
+                       		<div id="genos" class="option-group">
+                            
+                                <span class="goption">
+                                    <label class="options">
+                                        <input type="radio" id="option1" name="age" value="18-24" checked/>
+                                        <span class="radio"></span>
+                                    </label>
+                                    <label for="option1">18 - 24</label>
+                               </span> 
+                               
+                                <span class="goption">
+                                    <label class="options">
+                                        <input type="radio" id="option2" name="age" value="25-34" />
+                                        <span class="radio"></span>
+                                    </label>
+                                    <label for="option2">25 - 34</label>
+                               </span>
+                               
+                                <span class="goption">
+                                    <label class="options">
+                                        <input type="radio" id="option3" name="age" value="35-44" />
+                                        <span class="radio"></span>
+                                    </label>
+                                    <label for="option3">35 - 44</label>
+                               </span>
+                               
+                                <span class="goption">
+                                    <label class="options">
+                                        <input type="radio" id="option4" name="age" value="45-54" />
+                                        <span class="radio"></span>
+                                    </label>
+                                    <label for="option4">45 - 54</label>
+                               </span> 
+                               
+								<span class="goption">
+                                    <label class="options">
+                                        <input type="radio" id="option5" name="age" value="55+" />
+                                        <span class="radio"></span>
+                                    </label>
+                                    <label for="option5">55+</label>
+                               </span>                                                                
+                                                              
+                           </div><!-- end .option-group section -->                            
+                       </section>
+                     </fieldset>
+                     <fieldset>
+                       
+					 <fieldset>
+					 	<legend>Τι μέσο χρησιμοποιήσατε για να έρθετε;</legend>
+                           
+                           <section>
+                                <div class="row lbl-single">
+                                    <div class="col12 last">
+                                        <label for="transport" class="lbl-ui select">
+                                          <select id="transport-selector">
+                                            <option name="transport" value="not">Επιλέξτε μέσο</option>
+                                            <option name="transport" value="auto">Αυτοκίνητο</option>
+                                            <option name="transport" value="moto">Μοτοσυκλέτα</option>
+                                            <option name="transport" value="bike">Ποδήλατο</option>
+                                            <option name="transport" value="metro">Μετρό</option>
+                                            <option name="transport" value="bus">Λεωφορείο</option>
+                                            <option name="transport" value="taxi">Ταξί</option>
+                                            <option name="transport" value="walk">Περπατώντας</option>
+                                          </select>
+                                        </label>     
+                                    </div>
+                                </div>                       
+                           </section> 
+                      </fieldset>   
+                      <fieldset>
+                      
+                      
+                     <fieldset> 
+                       	   <legend>Πως κρίνετε την ποιότητα των παρακάτω :</legend>
+                           <section>
+                       	   
+                           <span id="food-selector" class="rating block">
+                           		<span class="lbl-text">Φαγητο - Ποτο</span>
+                                <input type="radio" class="rating-input" id="rating-input-1-5" name="food-rate" value="5">
+                                <label for="rating-input-1-5" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="rating-input-1-4" name="food-rate" value="4">
+                                <label for="rating-input-1-4" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="rating-input-1-3" checked name="food-rate" value="3">
+                                <label for="rating-input-1-3" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="rating-input-1-2" name="food-rate" value="2">
+                                <label for="rating-input-1-2" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="rating-input-1-1" name="food-rate" value="1">
+                                <label for="rating-input-1-1" class="rating-star"><i class="icon-star"></i></label>
+                         </span>
+                         
+                           <span id="support-selector" class="rating block">
+                           		<span class="lbl-text">Εξυπηρετηση Προσωπικου</span>
+                                <input type="radio" class="rating-input" id="support-5" name="support-rate" value="5">
+                                <label for="support-5" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="support-4" name="support-rate" value="4">
+                                <label for="support-4" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="support-3" checked name="support-rate" value="3">
+                                <label for="support-3" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="support-2" name="support-rate" value="2">
+                                <label for="support-2" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="support-1" name="support-rate" value="1">
+                                <label for="support-1" class="rating-star"><i class="icon-star"></i></label>
+                         </span> 
+                         
+							<span id="clean-selector" class="rating block">
+                           		<span class="lbl-text">Καθαριοτητα</span>
+                                <input type="radio" class="rating-input" id="clean-5" name="clean-rate" value="5">
+                                <label for="clean-5" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="clean-4" name="clean-rate" value="4">
+                                <label for="clean-4" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="clean-3" checked name="clean-rate" value="3">
+                                <label for="clean-3" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="clean-2" name="clean-rate" value="2">
+                                <label for="clean-2" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="clean-1" name="clean-rate" value="1">
+                                <label for="clean-1" class="rating-star"><i class="icon-star"></i></label>
+                         </span>                          
+                                 
+							<span id="do-selector" class="rating block">
+                           		<span class="lbl-text">Συμπεριφορα - Γενικοτερο Κλιμα</span>
+                                <input type="radio" class="rating-input" id="do-5" name="do-rate" value="5">
+                                <label for="do-5" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="do-4" name="do-rate" value="4">
+                                <label for="do-4" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="do-3" checked name="do-rate" value="3">
+                                <label for="do-3" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="do-2" name="do-rate" value="2">
+                                <label for="do-2" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="do-1" name="do-rate" value="1">
+                                <label for="do-1" class="rating-star"><i class="icon-star"></i></label>
+                         </span>                          
+                                  
+							<span id="cost-selector" class="rating block">
+                           		<span class="lbl-text">Κοστος</span>
+                                <input type="radio" class="rating-input" id="cost-5" name="cost-rate" value="5">
+                                <label for="cost-5" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="cost-4" name="cost-rate" value="4">
+                                <label for="cost-4" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="cost-3" checked name="cost-rate" value="3">
+                                <label for="cost-3" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="cost-2" name="cost-rate" value="2">
+                                <label for="cost-2" class="rating-star"><i class="icon-star"></i></label>
+                                <input type="radio" class="rating-input" id="cost-1" name="cost-rate" value="1">
+                                <label for="cost-1" class="rating-star"><i class="icon-star"></i></label>
+                         </span>                          
+                                                 
+                      </section>
+                     </fieldset>
+                     <fieldset> 
+                           
+                    <fieldset>     
+                        <legend>Από που μάθατε για εμάς;</legend>
+                        <section>
+                            <label class="lbl-ui select-multiple">
+                                <select id="multi" name="multi-from" multiple="multiple" size="8">
+                                    <option name="media" value="not" disabled>Επιλέξτε μέσο</option>
+                                    <option name="media" value="tv">Τηλεόραση</option>
+                                    <option name="media" value="internet">Ίντερνετ</option>
+                                    <option name="media" value="radio">Ραδιόφωνο</option>
+                                    <option name="media" value="fb">Facebook</option>
+                                    <option name="media" value="tw">Twitter</option>
+                                    <option name="media" value="news">Έντυπα Μέσα</option>
+                                    <option name="media" value="family">Φιλοι/Συγγενείς</option>                             
+                                </select>
+                            </label>                       
+                       </section>                                                                                    
+					</fieldset>
+					 
+					<fieldset>
+                        <legend>Θα μας ήταν πολύτιμο, ένα σχόλιο...</legend> 
+                        <section id="text-area">
+                            <label class="lbl-ui">
+                                <textarea id="msg" name="msg" class="textarea no-resize"></textarea>
+                            </label>                          
+                        </section>
+                    </fieldset>     
+                              
+                    <section>
+                        <span class="goption upt">
+                            <label class="options">
+                                <input type="checkbox" id="check1" name="again" value="again" checked/>
+                                <span class="checkbox"></span>                                    
+                            </label>
+                            <label for="check1">Επιθυμώ να ερωτηθώ ξανά</label>
+                            <a href="javascript:;" class="info-tip" aria-describedby="helptooltip"> ?
+                                <span role="tooltip">
+                                    Τσεκάρετε σε περίπτωση που επιθυμείτε να απαντήσετε εκ νέου, την επόμενη φορά που θα ξαναβρεθείτε εδώ.
+                                </span>
+                            </a>
+                        </span>                               
+                    </section>                      
+                   </div><!-- end .form-section section -->
+                </div><!-- end .form-enclose section -->
+                <div class="form-buttons">
+                    <section> 
+                       <input type="button" name="submit" value="Αποστολή" class="button blue" onclick="loginSurvey(firebase)"/>
+                       <input type="reset" value="Καθαρισμός" class="button" />
+                       <span style="float:right; padding-bottom:20px;"><a href="http://www.google.com" style="color: #ACAC9B; text-decoration: none; ">Παράβλεψη</a></span> 
+                    </section>                
+                </div><!-- end .form-buttons section -->
+            </form>
+        </div><!-- end .golden-forms section --> 
+    </div><!-- end .gforms section -->
+    
+    <div></div><!-- end section -->
+    <div></div><!-- end section -->
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/firebaseInit.js"></script>
+<script src="./js/collectData.js"></script>
+<script src="./js/controller-survey.js"></script>
+
+</html>

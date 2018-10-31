@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <title> Marqet WiFi | Admin Login </title>
+    
+    <link type="text/css" rel="stylesheet"   href="css/golden-base.css"/>
+    <link type="text/css" rel="stylesheet"   href="css/golden-forms.css"/>
+    <link type="text/css" rel="stylesheet"   href="css/font-awesome.min.css"/>
+
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="./js/firebaseInit.js"></script>
+
+    <script> 
+
+        function moveToAdminDashboard(firebase) {
+
+            firebase
+            .auth()
+            .signInAnonymously()
+            .catch((error) => alert("Error with code: " + error.code + " and message: " + error.message));
+
+            firebase
+            .auth()
+            .onAuthStateChanged((user) => window.location = "admin-dashboard");  
+
+        }
+            
+    </script>
+    
+</head>
+
+<body class="bg-linen">
+
+    <div class="gforms">
+    
+        <div class="golden-forms wrapper mini">
+            <form>
+                <div class="form-title"><h2>Admin Login</h2></div>
+                <div class="form-enclose">
+                    <div class="form-section">
+                       <section>
+                       		<label for="usernames" class="lbl-text">Username:</label>
+                            <label class="lbl-ui append-icon">
+                            	<input type="text" name="usernames" onfocus="this.value=''" id="usernames" class="input" placeholder="Enter Name" value="admin" required />
+                                <span><i class="icon-user"></i></span>
+                            </label>                           
+                       </section> 
+                       <section>
+                       		<label for="pass" class="lbl-text">Password:</label>
+                            <label class="lbl-ui append-icon">
+                                <input type="password" name="pass" onfocus="this.value=''" id="pass" class="input" placeholder="Enter Password" value="administrator" required/>
+                                <span><i class="icon-lock"></i></span>
+                            </label>                            
+                       </section>
+                       <section>
+                       
+								<span class="gtoggle">
+                                    <label class="toggle-switch green">
+                                      <input type="checkbox" name="rem" id="toggle1" checked />
+                                      <label for="toggle1" data-on="✓" data-off="✕"></label>
+                                    </label>                                
+                                    <label for="toggle1">Remember password <strong><a href="#" class="glink ext">Forgot Password?</a></strong></label>
+                               </span><!-- end .gtoggle section -->                        
+                       
+                       </section> 
+                       
+                   </div><!-- end .form-section section -->
+                </div><!-- end .form-enclose section -->
+                <div class="form-buttons">
+                    <section>
+                        <input type="button" style="left:70%; width:30%" value="Σύνδεση" class="button green" onClick="moveToAdminDashboard(firebase)"/>                           
+                    </section>                
+                </div><!-- end .form-buttons section -->
+            </form>
+        </div><!-- end .golden-forms section --> 
+    </div><!-- end .gforms section -->
+    
+    <div></div><!-- end section -->
+    <div></div><!-- end section -->
+
+</body>
+  
+
+</html>

@@ -1,0 +1,120 @@
+{
+  "questions" : {
+    "question-age" : {
+      "18-24" : {
+        "content" : "18 - 24",
+        "quantity" : 19
+      },
+      "25-34" : {
+        "content" : "25 - 34",
+        "quantity" : 11
+      },
+      "35-44" : {
+        "content" : "35 - 44",
+        "quantity" : 14
+      },
+      "45-54" : {
+        "content" : "45 - 54",
+        "quantity" : 7
+      },
+      "55+" : {
+        "content" : "55+",
+        "quantity" : 16
+      },
+      "total" : 67
+    },
+    "question-media" : {
+      "family" : {
+        "content" : "Φίλοι/Συγγενείς",
+        "quantity" : 4
+      },
+      "fb" : {
+        "content" : "Facebook",
+        "quantity" : 12
+      },
+      "internet" : {
+        "content" : "Ίντερνετ",
+        "quantity" : 7
+      },
+      "news" : {
+        "content" : "Έντυπα Μέσα",
+        "quantity" : 4
+      },
+      "not" : {
+        "content" : "Επιλέξτε..",
+        "quantity" : 0
+      },
+      "radio" : {
+        "content" : "Ραδιόφωνο",
+        "quantity" : 2
+      },
+      "total" : 46,
+      "tv" : {
+        "content" : "Τηλεόραση",
+        "quantity" : 11
+      },
+      "tw" : {
+        "content" : "Twitter",
+        "quantity" : 6
+      }
+    },
+    "question-stars" : {
+      "clean" : {
+        "content" : "Καθαριοτητα",
+        "totalSum" : 28
+      },
+      "cost" : {
+        "content" : "Κοστος",
+        "totalSum" : 13
+      },
+      "do" : {
+        "content" : "Συμπεριφορα - Γενικοτερο Κλιμα",
+        "totalSum" : 21
+      },
+      "food" : {
+        "content" : "Φαγητο - Ποτο",
+        "totalSum" : 16
+      },
+      "support" : {
+        "content" : "Εξυπηρετηση Προσωπικου",
+        "totalSum" : 23
+      },
+      "total" : 6
+    },
+    "question-transport" : {
+      "auto" : {
+        "content" : "Αυτοκίνητο",
+        "quantity" : 7
+      },
+      "bike" : {
+        "content" : "Ποδήλατο",
+        "quantity" : 11
+      },
+      "bus" : {
+        "content" : "Λεωφορείο",
+        "quantity" : 4
+      },
+      "metro" : {
+        "content" : "Μετρό",
+        "quantity" : 8
+      },
+      "moto" : {
+        "content" : "Μοτοσυκλέτα",
+        "quantity" : 5
+      },
+      "not" : {
+        "content" : "Επιλέξτε..",
+        "quantity" : 0
+      },
+      "taxi" : {
+        "content" : "Ταξί",
+        "quantity" : 6
+      },
+      "total" : 46,
+      "walk" : {
+        "content" : "Περπατώντας",
+        "quantity" : 5
+      }
+    }
+  }
+}

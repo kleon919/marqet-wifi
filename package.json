@@ -1,0 +1,24 @@
+{
+  "name": "marqetwifi",
+  "version": "0.0.1",
+  "description": "A web app which is offering realtime survey results",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "marqetwifi",
+    "survey",
+    "marqet",
+    "wifi"
+  ],
+  "author": "kleon",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.14.1",
+    "firebase-admin": "^5.2.1",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.4.3"
+  }
+}

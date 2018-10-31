@@ -1,0 +1,113 @@
+﻿
+#container {
+  position: relative;
+  width: 720px;
+  margin: 20px;
+  margin-top: 4px;
+  margin-left: -6.7%;
+  padding-bottom: 3%;
+  text-align: center;
+  overflow: hidden;
+  font: 14px 'Trebuchet MS', sans serif;
+}
+
+.left {
+  float: left;
+  width: 48%;
+}
+
+#stars.left {
+  float: left;
+  width: 48%;
+  margin-left:2%;
+}
+
+#customForm.gforms  {
+  padding-top:0.01%; 
+  font-size: 16px;
+}
+
+#chartdiv {
+  width	: 90%;
+  height	: 250px;
+  margin-left:10%;
+}			
+
+#grafico {
+  position: relative;
+  height: 280px;
+  border-left: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  width: 100%;
+  margin-top: 23px;
+}
+
+.riga {
+  position: absolute;
+  left: 0;
+  height: 1px;
+  background-color: gray;
+  width: 100%;
+}
+
+.riga div {
+  float: left;
+  margin: -8px 0 0 -40px;
+}
+
+.canc {
+  clear: both;
+}
+
+table {
+  width: 62%;
+  background-color: white;
+  color: #000;
+  margin: 1em auto;
+}
+
+table caption {
+  background-color: #D8EED8;
+  color: #004156;
+  text-align: left;
+}
+
+table tr:nth-child(2n) {
+  background-color: #D8EED8;
+}
+
+table tr:nth-child(2n+1) {
+  background-color: #BFDFFF;
+}
+
+table td {
+  text-align: center;
+  border-bottom: 1px solid #CDCDCD;
+  padding: 6px;
+}
+
+.column {
+  position: absolute;
+  width: 11%;
+  bottom: 0;
+  background-color: #003366;
+  margin-left: 5%;
+}
+
+div.button {
+  margin: 0 auto;
+  text-align: center;
+  width: 100px;
+  background-color: #336699;
+  border: 1px solid #336699;
+  border-radius: 5px;
+  padding: 8px;
+  color: #E1E2CF;
+  cursor: pointer;
+  font:14px "Trebuchet MS",sans serif;
+}
+
+.column div {
+  margin-top: -20px;
+  height: 20px;
+}

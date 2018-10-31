@@ -1,0 +1,120 @@
+{
+  "questions" : {
+    "question-age" : {
+      "18-24" : {
+        "content" : "18 - 24",
+        "quantity" : 0
+      },
+      "25-34" : {
+        "content" : "25 - 34",
+        "quantity" : 0
+      },
+      "35-44" : {
+        "content" : "35 - 44",
+        "quantity" : 0
+      },
+      "45-54" : {
+        "content" : "45 - 54",
+        "quantity" : 0
+      },
+      "55+" : {
+        "content" : "55+",
+        "quantity" : 0
+      },
+      "total" : 0
+    },
+    "question-transport" : {
+      "not" : {
+        "content" : "Επιλέξτε..",
+        "quantity" : 0
+      },
+      "auto" : {
+        "content" : "Αυτοκίνητο",
+        "quantity" : 7
+      },
+      "moto" : {
+        "content" : "Μοτοσυκλέτα",
+        "quantity" : 4
+      },
+      "bike" : {
+        "content" : "Ποδήλατο",
+        "quantity" : 9
+      },
+      "metro" : {
+        "content" : "Μετρό",
+        "quantity" : 6
+      },
+      "bus" : {
+        "content" : "Λεωφορείο",
+        "quantity" : 4
+      },
+      "taxi" : {
+        "content" : "Ταξί",
+        "quantity" : 6
+      },
+      "walk" : {
+        "content" : "Περπατώντας",
+        "quantity" : 4
+      },
+      "total" : 40
+    },
+    "question-stars" : {
+      "food" : {
+        "content" : "Φαγητο - Ποτο",
+        "totalSum" : 0
+      },
+      "support" : {
+        "content" : "Εξυπηρετηση Προσωπικου",
+        "totalSum" : 0
+      },
+      "clean" : {
+        "content" : "Καθαριοτητα",
+        "totalSum" : 0
+      },
+      "do" : {
+        "content" : "Συμπεριφορα - Γενικοτερο Κλιμα",
+        "totalSum" : 0
+      },
+      "cost" : {
+        "content" : "Κοστος",
+        "totalSum" : 0
+      },
+      "total" : 0
+    },
+    "question-media" : {
+      "not" : {
+        "content" : "Επιλέξτε..",
+        "quantity" : 0
+      },
+      "internet" : {
+        "content" : "Ίντερνετ",
+        "quantity" : 7
+      },
+      "radio" : {
+        "content" : "Ραδιόφωνο",
+        "quantity" : 2
+      },
+      "fb" : {
+        "content" : "Facebook",
+        "quantity" : 10
+      },
+      "tw" : {
+        "content" : "Twitter",
+        "quantity" : 6
+      },
+      "news" : {
+        "content" : "Έντυπα Μέσα",
+        "quantity" : 4
+      },
+      "family" : {
+        "content" : "Φίλοι/Συγγενείς",
+        "quantity" : 3
+      },
+       "tv" : {
+        "content" : "Τηλεόραση",
+        "quantity" : 8
+      },
+      "total" : 40
+    }
+  }
+}

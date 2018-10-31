@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title> Marqet WiFi | Admin Dashboard </title>
+
+    <link type="text/css" rel="stylesheet"   href="css/golden-forms.css"/>
+    <link type="text/css" rel="stylesheet"   href="css/font-awesome.min.css"/>
+
+    <link type="text/css" rel="stylesheet"   href="./css/bar.css"/>
+    <link type="text/css" rel="stylesheet"   href="./css/pie.css"/>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/firebaseInit.js"></script>
+
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    
+    <script src="./js/charts-firebase.js"></script>
+    
+    <!-- <script src="./js/find-view-ranges.js"></script> -->
+
+    <script type="text/javascript">
+              
+      $(document).ready(() => {
+
+        // ********* MEDIA PIE CHART *******************
+
+        firebase
+        .database()
+        .ref("questions/question-media")
+        .on('value', (snapshot) => {
+
+          const mediaArray = toArrayExceptNotTotal(snapshot.val());
+          mediaArray.sort((a, b) => b.quantity - a.quantity);
+          
+          setMediaResults(mediaArray);
+          createPie(".pieID.legend", ".pieID.pie");
+
+        });
+        // *********************************************
+
+        // ********* TRANSPORT BAR CHART ***************
+
+        firebase
+        .database()
+        .ref("questions/question-transport")
+        .on('value', (snapshot) => {
+
+          const transportArray = toArrayExceptNotTotal(snapshot.val());
+          
+          createPercentages(transportArray, snapshot.val().total);
+          setTransportResults(transportArray);
+          viewTransportBarChart();
+
+        });  
+        // *********************************************
+
+        // ************ AGE CHART **********************
+
+        firebase
+        .database()
+        .ref("questions/question-age")
+        .on('value', (snapshot) => {
+
+          const ageArray = toArrayExceptNotTotal(snapshot.val());
+          const resultsArray = setAgeResults(ageArray);
+          const factor = snapshot.val().total / 2.7;
+          
+          drawChart(AmCharts, resultsArray, factor);
+         
+        });
+        // *********************************************
+
+        // *********** STARS CHART *********************
+
+        firebase
+        .database()
+        .ref("questions/question-stars")
+        .on('value', (snapshot) => {
+
+          const starObject = calculateStars(snapshot.val());
+          const starsArray = toArrayExceptNotTotal(starObject);
+
+          setStarsResults(starsArray);
+
+        });
+        // *********************************************
+      });
+
+    </script>
+ 
+
+  </head>
+
+  <body>
+
+    <!-- *************************  PIE  ************************* --> 
+    <div class="left">  
+      <main>
+                
+        <section>
+        
+          <h1 style="font-size:22px;">Από που μάθατε για εμάς;</h1>
+
+          <div class="pieID pie"></div>
+
+          <ul id="pieComponent" class="pieID legend">
+
+            <li style="border-color:cornflowerblue">
+              <em></em>
+              <span></span>
+            </li>
+
+            <li style="border-color:olivedrab">
+              <em></em>
+              <span></span>
+            </li>
+
+            <li style="border-color:orange">
+              <em></em>
+              <span></span>
+            </li>
+
+            <li style="border-color:turquoise">
+              <em></em>
+              <span></span>
+            </li>
+
+            <li style="border-color:purple">
+              <em></em>
+              <span></span>
+            </li>
+
+            <li style="border-color:tomato">
+              <em></em>
+              <span></span>
+            </li>
+
+            <li style="border-color:navy">
+              <em></em>
+              <span></span>
+            </li>
+
+          </ul>
+
+        </section>
+
+        <section>
+          
+          <!--<div class="button" onclick="again()">Ξαναφόρτωσε</div>-->
+
+        </section>
+  
+      </main>
+    </div>
+
+    <!-- *************************  BAR  ************************* -->
+    <div class="left">
+        
+      <div id="container">
+
+        <div class="left">
+
+          <h1 style="font-size:22px;">Τι μέσο χρησιμοποιήσατε για να έρθετε;</h1>
+
+          <table>
+            <tbody>
+              <tr>
+                <td>Αυτοκίνητο</td>
+                <td></td>
+                <td style="background-color:#336699">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Ποδήλατο</td>
+                <td></td>
+                <td style="background-color:#003366">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Λεωφορείο</td>
+                <td></td>
+                <td style="background-color:#ff6600">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Μετρό</td>
+                <td></td>
+                <td style="background-color:#ffcc00">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Μοτοσυκλέτα</td>
+                <td></td>
+                <td style="background-color:#33cc00">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Ταξί</td>
+                <td></td>
+                <td style="background-color:#ff6699">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Περπατώντας</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td style="background-color:#47b5ff">&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div><!-- end class="left" div -->
+
+        <div class="left">
+          <div id="grafico">
+
+            <div class="riga" style="top:25%">
+              <div>75%</div>
+            </div>
+            
+            <div class="riga" style="top:50%">
+              <div>50%</div>
+            </div>
+            
+            <div class="riga" style="top:75%">
+              <div>25%</div>
+            </div>
+                
+            <div id="col0" style="left:0%; background-color:#336699;" class="column"></div>
+            <div id="col1" style="left:14%; background-color:#003366;" class="column"></div>
+            <div id="col2" style="left:28%; background-color:#ff6600;" class="column"></div>
+            <div id="col3" style="left:42%; background-color:#ffcc00;" class="column"></div>
+            <div id="col4" style="left:56%; background-color:#33cc00;" class="column"></div>
+            <div id="col5" style="left:70%; background-color:#ff6699;" class="column"></div>
+            <div id="col6" style="left:84%; background-color:#47b5ff;" class="column"></div>
+
+          </div><!-- end class="left" div -->
+        </div>
+
+      </div>
+  
+    </div>   
+
+    <!-- *************************  AGE  ************************* -->
+    <div class="left">  
+      <div id="chartdiv"></div>	
+    </div>
+
+    <!-- ************************* STARS ************************* -->   
+    <div class="left" id="stars"> 
+      <div class="gforms" id="customForm">
+        <div class="golden-forms wrapper">   
+          <form id="wholeForm" method="post" action="">       
+            <div class="form-enclose">
+              <div class="form-section">
+                <fieldset>     
+                  <legend>Συνολική Αξιολόγηση</legend>
+                  
+                  <section id="starSection">
+
+                    <span id="clean-selector" class="rating block">
+                        <span class="lbl-text">Καθαριοτητα</span>
+                        <input type="radio" class="rating-input" id="rating-input-1-5" name="food-rate" value="5">
+                        <label for="rating-input-1-5" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="rating-input-1-4" name="food-rate" value="4">
+                        <label for="rating-input-1-4" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="rating-input-1-3" name="food-rate" value="3">
+                        <label for="rating-input-1-3" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="rating-input-1-2" name="food-rate" value="2">
+                        <label for="rating-input-1-2" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="rating-input-1-1" name="food-rate" value="1">
+                        <label for="rating-input-1-1" class="rating-star"><i class="icon-star"></i></label>
+                    </span>
+
+                    <span id="cost-selector" class="rating block">
+                        <span class="lbl-text">Κοστος</span>
+                        <input type="radio" class="rating-input" id="cost-5" name="cost-rate" value="5">
+                        <label for="cost-5" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="cost-4" name="cost-rate" value="4">
+                        <label for="cost-4" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="cost-3" name="cost-rate" value="3">
+                        <label for="cost-3" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="cost-2" name="cost-rate" value="2">
+                        <label for="cost-2" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="cost-1" name="cost-rate" value="1">
+                        <label for="cost-1" class="rating-star"><i class="icon-star"></i></label>
+                    </span>     
+                    
+                    <span id="do-selector" class="rating block">
+                        <span class="lbl-text">Συμπεριφορα - Γενικοτερο Κλιμα</span>
+                        <input type="radio" class="rating-input" id="do-5" name="do-rate" value="5">
+                        <label for="do-5" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="do-4" name="do-rate" value="4">
+                        <label for="do-4" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="do-3" name="do-rate" value="3">
+                        <label for="do-3" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="do-2" name="do-rate" value="2">
+                        <label for="do-2" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="do-1" name="do-rate" value="1">
+                        <label for="do-1" class="rating-star"><i class="icon-star"></i></label>
+                    </span>       
+                    
+                    <span id="food-selector" class="rating block">
+                        <span class="lbl-text">Φαγητο - Ποτο</span>
+                        <input type="radio" class="rating-input" id="clean-5" name="clean-rate" value="5">
+                        <label for="clean-5" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="clean-4" name="clean-rate" value="4">
+                        <label for="clean-4" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="clean-3" name="clean-rate" value="3">
+                        <label for="clean-3" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="clean-2" name="clean-rate" value="2">
+                        <label for="clean-2" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="clean-1" name="clean-rate" value="1">
+                        <label for="clean-1" class="rating-star"><i class="icon-star"></i></label>
+                    </span>                          
+                            
+                    <span id="support-selector" class="rating block">
+                        <span class="lbl-text">Εξυπηρετηση Προσωπικου</span>
+                        <input type="radio" class="rating-input" id="support-5" name="support-rate" value="5">
+                        <label for="support-5" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="support-4" name="support-rate" value="4">
+                        <label for="support-4" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="support-3" name="support-rate" value="3">
+                        <label for="support-3" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="support-2" name="support-rate" value="2">
+                        <label for="support-2" class="rating-star"><i class="icon-star"></i></label>
+                        <input type="radio" class="rating-input" id="support-1" name="support-rate" value="1">
+                        <label for="support-1" class="rating-star"><i class="icon-star"></i></label>
+                    </span>                   
+                                                                
+                  </section>
+            
+                </fieldset>
+                <fieldset></fieldset>.<!-- extra fieldset to draw a bottom line  -->           
+              </div><!-- end .form-section section -->
+            </div><!-- end .form-enclose section -->
+          </form> 
+        </div><!-- end .golden-forms section --> 
+      </div>
+    </div>
+      
+  </body>
+
+  <footer>by kleon</footer>	
+
+</html>
